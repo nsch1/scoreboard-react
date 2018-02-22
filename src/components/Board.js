@@ -17,14 +17,18 @@ export default class Board extends PureComponent {
   }
 
   render() {
-    const { players } = this.props
+    const { players, updatePlayer } = this.props
 
     return (
       <div>
         <Title content="Scoreboard" />
         <ul className="Board">
           {sortByScore(players).map((player, index) => (
-            <Player key={index} { ...player } />
+            <Player 
+              key={index}
+              onChange={updatePlayer}
+              { ...player }
+            />
           ))}
         </ul>
       </div>

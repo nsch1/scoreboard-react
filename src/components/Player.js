@@ -10,7 +10,15 @@ export const playerShape = PropTypes.shape({
 })
 
 export default class Player extends PureComponent {
-  static propTypes = playerShape.isRequired
+  static propTypes = {
+    ...playerShape.isRequired,
+    onChange: PropTypes.func.isRequired
+  }
+
+  increasePlayerScore = () => {
+    const { id, score, onChange } = this.props
+    onChange(id, { score: score + 1 })
+  }
 
   render() {
     const { name, score } = this.props
@@ -19,7 +27,7 @@ export default class Player extends PureComponent {
       <li className="Player">
         <p className="name">{name}</p>
         <p className="score">{score}</p>
-        <PlusOneButton />
+        <PlusOneButton onClick={this.increasePlayerScore} />
       </li>
     )
   }
