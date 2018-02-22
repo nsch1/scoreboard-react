@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
 import Title from '../components/Title'
-import Player from '../components/Player'
+import Player, { playerShape } from '../components/Player'
+import PropTypes from 'prop-types'
 import './Board.css'
 
 const sortByScore = (arr) => {
@@ -10,6 +11,10 @@ const sortByScore = (arr) => {
 }
 
 export default class Board extends PureComponent {
+  static propTypes = {
+    players: PropTypes.arrayOf(playerShape).isRequired
+  }
+
   render() {
     const { players } = this.props
 

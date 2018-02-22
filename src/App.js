@@ -5,7 +5,7 @@ import './App.css';
 //import Player from './components/Player'
 import Board from './components/Board'
 
-const players = [
+export const players = [
   { id: 1, name: 'Arno', score: 4 },
   { id: 2, name: 'Mat', score: 6 },
   { id: 3, name: 'Mike', score: 3 },
