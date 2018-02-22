@@ -15,10 +15,24 @@ export const players = [
 ]
 
 class App extends Component {
+  state = { players }
+
+  updatePlayer = (playerId, updates) => {
+    this.setState({
+      players: this.state.players.map((player) => {
+        if (player.id !== playerId) return player
+        return { ...player, ...updates }
+      })
+    })
+  }
+
   render() {
     return (
       <div className="App">
-        <Board players={players} />
+        <Board 
+          players={this.state.players}
+          updatePlayer={this.updatePlayer}
+        />
       </div>
     );
   }

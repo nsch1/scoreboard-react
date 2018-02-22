@@ -12,7 +12,8 @@ const sortByScore = (arr) => {
 
 export default class Board extends PureComponent {
   static propTypes = {
-    players: PropTypes.arrayOf(playerShape).isRequired
+    players: PropTypes.arrayOf(playerShape).isRequired,
+    updatePlayer: PropTypes.func.isRequired
   }
 
   render() {

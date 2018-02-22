@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
+import PlusOneButton from './PlusOneButton'
 import './Player.css'
 
 export const playerShape = PropTypes.shape({
@@ -18,6 +19,7 @@ export default class Player extends PureComponent {
       <li className="Player">
         <p className="name">{name}</p>
         <p className="score">{score}</p>
+        <PlusOneButton />
       </li>
     )
   }
